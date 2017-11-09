@@ -25,46 +25,42 @@ function exist(el){
 
 jQuery(document).ready(function($) {
 
-    /*---------------------------
-                                  ADD CLASS ON SCROLL
-    ---------------------------*/
-    $(function() { 
-        var $document = $(document),
-            $element = $('.toggle-menu'),
-            $element2 = $('header'),
-            className = 'hasScrolled';
+    $(".header").headroom();
 
-        $document.scroll(function() {
-            $element.toggleClass(className, $document.scrollTop() >= 1);
-            $element2.toggleClass(className, $document.scrollTop() >= 1);
+    $('[data-tilt]').tilt();
+
+    // parallax
+    var initialLeft = '',
+        initialTop = '';
+
+    $('.parallax').mouseenter(function(event) {
+        initialLeft = event.pageX;
+        initialTop = event.pageY;
+    });
+
+    $('.parallax').mouseleave(function() {
+        $(this).addClass('notActive').find('.layer').css({
+            transform:'translateX(0px) translateY(0px)'
         });
     });
 
+    $('.parallax').mousemove(function(e) {
+        var leftDif = initialLeft - e.pageX,
+            topDif = initialTop - e.pageY;
 
-    /*---------------------------
-                                  File input logic
-    ---------------------------*/
-    $('input[type=file]').each(function(index, el) {
-        $(this).on('change', function(event) {
-            event.preventDefault();
-            var placeholder = $(this).siblings('.placeholder');
-        
-            if ( this.files.length > 0 ) {
-                if ( this.files[0].size < 5000000 ) {
-                    var filename = $(this).val().split('/').pop().split('\\').pop();
-                    if ( filename == '' ) {
-                        filename = placeholder.attr('data-label');
-                    }
-                    placeholder.text(filename);
-                } else {
-                    alert('Maximum file size is 5Mb');
-                }    
-            } else {
-                placeholder.text( placeholder.attr('data-label') );
-            }
-            
+        $(this).removeClass('notActive').find('.layer-1').css({
+            transform:'translateX(' + leftDif / 30 + 'px) translateY(' + topDif / 10 + 'px)'
         });
+        $(this).find('.layer-2').css({
+            transform:'translateX(' + leftDif / 60 + 'px) translateY(' + topDif / 20 + 'px)'
+        });
+        $(this).find('.layer-3').css({
+            transform:'translateX(' + (leftDif / 80) * -1 + 'px) translateY(' + (topDif / 40)  * -1 + 'px)'
+        });
+
     });
+    // ========== end parallax
+
     
     /*---------------------------
                                 PAGE ANCHORS
@@ -196,5 +192,30 @@ jQuery(document).ready(function($) {
     if ( exist( '#map_canvas' ) ) {
         googleMap_initialize();
     }
+
+    /*---------------------------
+                                  File input logic
+    ---------------------------*/
+    $('input[type=file]').each(function(index, el) {
+        $(this).on('change', function(event) {
+            event.preventDefault();
+            var placeholder = $(this).siblings('.placeholder');
+        
+            if ( this.files.length > 0 ) {
+                if ( this.files[0].size < 5000000 ) {
+                    var filename = $(this).val().split('/').pop().split('\\').pop();
+                    if ( filename == '' ) {
+                        filename = placeholder.attr('data-label');
+                    }
+                    placeholder.text(filename);
+                } else {
+                    alert('Maximum file size is 5Mb');
+                }    
+            } else {
+                placeholder.text( placeholder.attr('data-label') );
+            }
+            
+        });
+    });
 
 }); // end file

@@ -1,0 +1,80 @@
+.contact-form
+    position: relative
+    .btn
+        margin-top: 40px 
+        margin-left: auto
+        margin-right: auto
+        display: block  
+    p
+        text-transform: uppercase
+        font-size: 18px
+        font-weight: 600  
+        margin-bottom: 22px 
+    .form-group
+        &--file
+            width: 44px
+            cursor: pointer
+        &--textarea
+            position: relative
+            textarea
+                line-height: 46px !important
+                resize: none
+            &:before
+                position: absolute
+                content: ""
+                display: block
+                border-bottom: 1px solid  #cccfd2 
+                left: 0
+                top: 50px 
+                width: 100%
+            &:after
+                position: absolute
+                content: ""
+                display: block
+                border-bottom: 1px solid  #cccfd2 
+                left: 0
+                bottom: 50px 
+                width: 100%
+    &--white
+        background-color: #dfe2e6
+        color: $text
+        overflow: hidden
+        padding: 25px 35px 
+        font-weight: 600  
+        &:after
+            content: ""
+            display: block
+            position: absolute
+            width: 50%
+            height: 100%
+            left: 0
+            top: 0
+            background-color: #dadde0 
+            transform: skew(-20deg, 0)  
+            z-index: 0
+        .form-group
+            width: 100% 
+            margin-bottom: 25px 
+            input,
+            select
+                width: 100% 
+        textarea
+            width: 100%
+            background-color: transparent
+            resize: none
+            border: none
+            height: 140px
+            border-bottom: 1px solid  #cccfd2
+    form
+        position: relative
+        z-index: 2
+        background-position: 100% 100%
+input,
+select
+    height: 35px
+    padding-left: 4px  
+    font-size: 16px 
+    background: transparent 
+    border: none
+    border-bottom: 1px solid #C7CACD 
+    width: 265px 

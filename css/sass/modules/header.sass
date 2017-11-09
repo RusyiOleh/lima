@@ -1,35 +1,140 @@
 .header
-	+position(absolute, 0, 0, auto, 0)
-	+transition(all, .4s)
+	+position(fixed, 0, 0, auto, 0)
+	transition: .4s ease-in-out
 	
-	height: 80px
+	height: 110px
 	color: #FFF
-	background: rgba(0,0,0,.2)
-	
-	.wrapper
-		height: 100%
+	background: $grey
+	z-index: 100 
+	@media (max-width: 1500px)
+		height: 100px 
+	@media (max-width: 1200px)
+		height: 80px 
+	@media (max-width: 991px)
+		width: 260px
+		bottom: 0
+		left: auto
+		min-height: 100vh 
+		padding: 20px 0 
+		transform: translateX(260px) 
+		&.open
+			transform: translateX(0px) 
+	.container-fluid
+		height: 100% 
+		padding: 0 40px 
+		margin: 0 auto
+		max-width: 1900px  
+		@media (max-width: 1200px)
+			padding: 0 15px 
+		@media (max-width: 991px)
+			height: auto 
+		.row
+			height: 100%
+			@media (max-width: 991px)
+				height: auto 
+			& > div
+				height: 100% 
+			
+	.btn
+		&:last-child
+			margin-right: 20px 
+			@media (max-width: 991px)
+				margin: 20px auto
+				display: block 
 
-		& > div:first-of-type
-			text-align: left
+@media (min-width: 992px)
+	.headroom--unpinned
+	    transform: translateY(-100%)
+	.headroom--pinned,
+	.headroom--bottom 
+		transform: translateY(0)
 
-		& > div:last-of-type 
-			text-align: right
+.header	
+	.logo
+		display: flex
+		height: 100% 
+		align-items: center
+		@media (max-width: 991px)
+			height: auto 
+		img
+			display: block
+			max-height: 80% 
+			max-width: 100% 
+			@media (max-width: 1500px)
+				max-height: 70% 
 
 /* ------------------------------------ */
 /*  NAV STYLES  */
 
 .page-menu
+	display: inline-block
+	vertical-align: middle
+	margin-right: 8.8% 
+	@media (max-width: 1650px)
+		margin-right: 7% 
+	@media (max-width: 1500px)
+		margin-right: 5% 
+	@media (max-width: 991px)
+		margin: 30px auto
+		text-align: center
+		display: block 
 	ul
 		list-style-type: none
-
+		display: flex
+		@media (max-width: 991px)
+			display: block
 		li
 			display: inline-block
 			vertical-align: middle
-			margin: 0 10px
-
+			position: relative		
+			@media (max-width: 991px)
+				display: block	
+			&:last-child
+				&:after
+					display: none  
 			a
 				color: #fff
+				font-weight: 600 
 				text-transform: uppercase
+				display: inline-block
+				position: relative
+				display: flex
+				align-items: center
+				height: 110px
+				border-left: 1px solid  #5a5c5f
+				padding: 0 35px 
+				transform: skew(-20deg, 0)
+				transition: all .2s 
+				span
+					transform: skew(20deg, 0)
+					display: block
+					@media (max-width: 991px)
+						display: inline-block
+						transform: none
+				&:hover
+					background-color: #5A5C5F 
+					@media (max-width: 991px)
+						background: transparent
+						font-weight: 700  
+				@media (max-width: 1650px)
+					padding: 0 30px 
+				@media (max-width: 1500px)
+					height: 100px 
+					font-size: 14px
+					padding: 0 20px 
+				@media (max-width: 1200px)
+					height: 80px
+					font-size: 12px
+					padding: 0 15px  
+				@media (max-width: 991px)
+					height: auto
+					padding: 0
+					margin: 20px auto
+					border: none    
+					transform: none
+					display: block 
+			    
+				
 
 /* ------------------------------------ */
 /*  MENU BUTTON  */
@@ -37,10 +142,15 @@
 .menu-button
 	display: none
 	+position(fixed, 15px, 10px, auto, auto)
-	background: white
+	background: $cream
 	border-radius: 50%
 	box-shadow: 0 5px 10px rgba(black, 0.5)
 	cursor: pointer
 	transform: rotate(0deg)
-	transition: .5s ease-in-out
+	transition: .4s ease-in-out
 	cursor: pointer
+	z-index: 100 
+	@media (max-width: 991px)
+		display: block
+		&.is-active
+			transform: translateX(-260px)

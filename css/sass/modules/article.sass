@@ -1,0 +1,183 @@
+.article
+    font-weight: 300
+    line-height: 1.6  
+    width: 820px
+    padding-right: 6.8%
+    margin: 0 0 0 auto   
+    padding-top: 20px 
+    position: relative
+    background-repeat: no-repeat
+    max-width: 100% 
+    &.bg-img-bot-right
+        background-position: 100% 100% 
+    &--full
+        width: 100%
+        padding-right: 0
+    &--center
+        margin: 0 auto 
+    &--single
+        width: 550px 
+        margin: 0 
+        max-width: 100% 
+        img
+            max-width: 100% 
+            display: block
+            margin-bottom: 25px 
+    &--white
+        background-color: #DFE2E6
+        color: $text
+        overflow: hidden
+        padding: 25px 35px 
+        font-size: 14px 
+        &:after
+            content: ""
+            display: block
+            position: absolute
+            width: 50%
+            height: 100%
+            left: 0
+            top: 0
+            background-color: #dadde0 
+            transform: skew(-20deg, 0)
+            z-index: -1     
+        .list-blocks
+            li
+                padding-left: 0 
+                &:before
+                    left: -16px
+    &__columns
+        column-count: 2
+        column-gap: 25px    
+    & > *
+        position: relative
+        z-index: 2 
+    h1
+        font-size: 80px
+        font-weight: 400  
+        margin-bottom: 40px 
+        text-transform: uppercase
+        line-height: 1
+        letter-spacing: 0.01em  
+        @media (max-width: 1199px)
+            font-size: 64px 
+        @media (max-width: 991px)
+            font-size: 52px 
+        @media (max-width: 767px)
+            font-size: 42px 
+            margin-bottom: 30px 
+        @media (max-width: 400px)
+            font-size: 36px 
+            margin-bottom: 20px 
+    p, ul
+        margin-bottom: 35px 
+        &:last-child
+            margin-bottom: 0 
+        @media (max-width: 767px)
+            margin-bottom: 20px 
+    a
+        color: #DFE2E6 
+        text-transform: uppercase
+        font-weight: 600
+        padding-bottom: 2px 
+        border-bottom: 2px solid #3B3631  
+        transition: all .2s
+        &:hover
+            border-color: transparent 
+    ul
+        list-style-type: none
+        p
+            margin-bottom: 16px 
+        li
+            padding-left: 32px
+            margin-bottom: 10px 
+            position: relative
+            @media (max-width: 767px)
+                margin-bottom: 6px 
+            &:before
+                content: ""
+                display: block
+                width: 4px
+                height: 4px
+                border-radius: 50%
+                background-color: $red
+                position: absolute
+                left: 18px
+                top: 10px     
+                
+    .drawing-1
+        position: absolute
+        top: 0
+        right: calc(100% + 40px)
+        z-index: 0 !important
+    .drawing-2
+        position: absolute
+        bottom: 10%
+        margin: auto
+        right: -80px 
+        z-index: 0 !important
+    .map-image
+        min-height: 410px
+        position: relative 
+        img
+            position: absolute
+            left: -20%
+            top: 0
+            z-index: -1 
+
+.list
+    list-style-type: none
+    p
+        margin-bottom: 16px 
+    li
+        padding-left: 32px
+        margin-bottom: 10px 
+        position: relative
+        @media (max-width: 767px)
+            margin-bottom: 6px 
+        &:before
+            content: ""
+            display: block
+            width: 4px
+            height: 4px
+            border-radius: 50%
+            background-color: $red
+            position: absolute
+            left: 18px
+            top: 10px 
+    &--row
+        li
+            padding-left: 0 
+            &:before
+                display: none
+                
+.list-blocks
+    li
+        padding-bottom: 20px 
+        border-bottom: 1px solid #CCCFD2 
+        font-weight: 400 
+    h2
+        font-size: 16px
+        font-weight: 400
+        margin-bottom: 14px   
+
+.markers-wrap
+    height: 140px
+    position: relative 
+.marker
+    max-width: 230px
+    font-weight: 600
+    font-size: 18px
+    text-transform: uppercase
+    position: absolute   
+    &:nth-child(1)
+        left: 0
+        bottom: 0
+    &:nth-child(2)
+        left: 20%
+        top: 0
+    &:nth-child(3)
+        left: 50%
+        bottom: 0
+    &:nth-child(4)
+        right: 0
+        top: 0

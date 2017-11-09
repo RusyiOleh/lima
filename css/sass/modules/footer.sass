@@ -1,0 +1,222 @@
+.footer
+    padding: 10px 0 25px
+    background-color: $greyd  
+    .container-fluid
+        padding: 0 40px 
+        @media (max-width: 1200px)
+            padding: 0 15px 
+    p
+        max-width: 435px
+        font-size: 12px
+        color: #595959  
+        margin-bottom: 28px
+        line-height: 1.6 
+        &:last-child,
+        &.copy
+            margin-bottom: 0
+        a
+            color: #FFF   
+        @media (max-width: 1199px)
+            font-size: 10px 
+            margin-bottom: 15px 
+            max-width: 300px 
+        @media (max-width: 991px)
+            text-align: right
+            margin-right: 0
+            margin-left: auto 
+            width: 90%
+            max-width: 90%   
+        @media (max-width: 500px)
+            text-align: center 
+            width: 100%
+            max-width: 100%   
+    .logo
+        margin-bottom: 40px
+        display: block 
+        img
+            display: block
+            max-width: 100% 
+        @media (max-width: 991px)
+            margin-bottom: 0
+            width: 200px
+            max-width: 100%  
+        @media (max-width: 500px)
+            margin-bottom: 20px  
+            display: block
+            margin: 20px auto
+            transform: translateX(-20px) 
+    .btn
+        margin-top: 0 
+        &:last-child
+            margin-right: 40px 
+        @media (max-width: 991px)
+            margin-top: 0px 
+        @media (max-width: 500px)
+            margin-top: 20px 
+            margin-left: auto !important
+            margin-right: auto !important 
+    @media (max-width: 991px)
+        .container-fluid
+            & > .row
+                flex-direction: column-reverse
+        .footer-text-row
+            display: flex
+            justify-content: space-between
+            align-items: center  
+            padding-top: 20px 
+            @media (max-width: 500px)
+                display: block
+    @media (max-width: 500px)
+        .container-fluid
+            & > .row
+                align-items: center !important
+                justify-content: center !important
+.contact-block
+    text-align: left
+    font-size: 14px
+    line-height: 1.8
+    padding-left: 50px  
+    padding-right: 0 
+    address
+        font-style: normal
+        max-width: 220px 
+        @media (max-width: 991px)
+            max-width: 100% 
+            margin-bottom: 10px 
+            display: block
+    @media (max-width: 1199px)
+        font-size: 12px 
+        padding-left: 20px 
+    a
+        display: block
+        color: #FFF 
+        @media (max-width: 991px)
+            display: block
+    &--big
+        text-transform: uppercase
+        font-size: 18px 
+        font-weight: 600
+        padding-left: 100px
+        line-height: 1.3 
+        letter-spacing: 0.02em 
+        address
+            max-width: 100% 
+            margin-bottom: 20px
+            &:last-child
+                margin-bottom: 0 
+        a[href^="mailto"]
+            margin-top: 20px 
+        a[href^="mailto"],
+        a[href^="www"]
+            color: #DFE2E6 
+            text-transform: uppercase
+            padding-bottom: 4px 
+            border-bottom: 2px solid #3B3631  
+            transition: all .2s
+            display: inline-block
+            margin-bottom: 10px 
+            &:hover
+                border-color: transparent  
+        .circles
+            left: 70px
+            width: 25px
+            text-align: center 
+            transform: translateY(-50%) translateX(0%)
+            img
+                display: inline-block
+    &--nopad
+        padding-left: 0 
+    
+.page-menu--footer
+    margin-right: 0 
+    display: block
+    margin: 0 0 0 auto
+    text-align: right 
+    @media (max-width: 991px)
+        margin-bottom: 10px 
+    ul
+        justify-content: flex-end 
+        @media (max-width: 991px)
+            display: block
+            text-align: center
+        li
+            height: 110px 
+            display: flex
+            align-items: center
+            &:after
+                display: none
+            @media (max-width: 1500px)
+                height: 100px 
+            @media (max-width: 1200px)
+                height: 80px
+            @media (max-width: 991px)
+                height: auto
+                display: inline-block
+                vertical-align: middle
+            a
+                color: #595959
+                font-size: 14px  
+                transform: none
+                height: auto
+                display: block 
+                border: none
+                span
+                    transform: none
+                &:hover
+                    background: transparent 
+                    color: #DFE2E6 
+                &:hover
+                    font-weight: 600 
+                    &:after
+                        transform: translateX(2px) translateY(-2px) 
+                        opacity: 1
+                    &:before
+                        transform: translateX(-2px) translateY(2px)
+                        opacity: 1
+                &:after
+                    content: ""
+                    display: block
+                    width: 10px
+                    height: 10px
+                    border-top: 1px solid #DFE2E6 
+                    border-right: 1px solid #DFE2E6 
+                    position: absolute
+                    right: 0px
+                    top: 0px
+                    transition: all .2s ease-out
+                    opacity: 0
+                &:before
+                    content: ""
+                    display: block
+                    width: 10px
+                    height: 10px
+                    border-bottom: 1px solid #DFE2E6 
+                    border-left: 1px solid #DFE2E6 
+                    position: absolute
+                    left: 0px
+                    bottom: 0px
+                    opacity: 0
+                    transition: all .2s ease-out
+                @media (max-width: 1650px)
+                    padding: 0 30px 
+                @media (max-width: 1500px)
+                    font-size: 14px
+                    padding: 0 20px 
+                @media (max-width: 1200px)
+                    font-size: 12px
+                    padding: 0 15px  
+                @media (max-width: 991px)
+                    height: auto
+                    margin: 20px 5px
+                    border: none    
+                    transform: none
+                    display: block 
+                    padding: 0 4px  
+                    &:after,
+                    &:before
+                        width: 6px
+                        height: 6px  
+                @media (max-width: 600px)
+                    font-size: 10px 
+                @media (max-width: 500px)
+                    margin: 10px 0 
